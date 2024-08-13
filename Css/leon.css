@@ -1,0 +1,404 @@
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.continer{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+/* small screen */
+@media (min-width: 768px){
+    .continer{
+        width: 750px;
+    }
+}
+/* mediam screen */
+@media (min-width: 992px){
+    .continer{
+        width: 972px ;
+    }
+}
+/* large screen */
+@media (min-width: 1200px){
+    .continer{
+        width: 1180px;
+    }
+}
+.hedear{
+    padding: 10px;
+}
+.hedear .continer{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+.hedear .links{
+    position: relative;
+}
+.hedear .links:hover .icon span:nth-child(2){
+    width: 100%;
+}
+.hedear .links ul{
+    background-color: rgb(211, 226, 240);
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: none;/*عشان يخفيها */
+    z-index: 1;/*عشان تظهر فوق الخلفيه الي انا عاملها*/
+}
+.hedear .links ul::before{
+    content: "";
+    border-width: 10px;
+    border-color: transparent transparent rgb(211, 226, 240) transparent;
+    border-style: solid;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+}
+.hedear .links:hover ul{
+    display: block;
+}
+.hedear .links ul li a{
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    transition: .3s;
+}
+.hedear .links ul li:hover{
+    padding-left: 25px;
+}
+.hedear .links ul li:not(:last-child) a{ /*دي هتحط خطوط تحت كله معاده اخر عنصر*/
+    border: 1px solid #504646;
+}
+.hedear .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.hedear .links .icon span:first-child{
+    background-color: #222;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 2px;
+}
+.hedear .links .icon span:nth-child(2){
+    background-color: #222;
+    margin-bottom: 5px;
+    width: 60%;
+    height: 2px;
+    transition: .3s;
+}
+.hedear .links .icon span:last-child{
+    background-color: #222;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 2px;
+}
+:root{
+    --main-color: #10cab7;
+    --secondrey-color: #2c4755
+}
+
+/* ----------landing----------------------- */
+.landing{
+    background-image: url(../imge/mount.webp);
+    background-size: cover;
+    height: 90vh;
+    position: relative;
+}
+.landing .intro-text{ /*كوده ده علي بعضه هيساعده الي انا احط اي عنصر في نص العنصر الي انا عاوزه او في نص الشاشه*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 360px;
+    max-width: 100%;
+}
+.landing .intro-text h1{
+    margin: 0;
+    font-size: 50px;
+    color: var(--main-color);
+}
+.landing .intro-text p{
+    font-size: 18px;
+}
+/* ----------- */
+.features{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f6f6f6;
+    
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.features .feat{
+    padding: 20px;
+    text-align: center;
+}
+.features .feat i{
+    color: var(--main-color);
+    font-size: 50px;
+}
+.features .feat h3{
+    font-weight: 800;
+    margin: 30px 0;
+}
+.features .feat p{
+    font-size: 17px;
+    color: #777;
+}
+.special-heding{/*ده عشان عنصر هنستخدمه كتير عملناه لوحده كده عشان نعرف نتحكم فيه بسهوله services*/
+    color: #ebeced;
+    font-size: 100px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -2px;
+    margin: 0;
+}
+.special-heding + p{ /*معناها بقوله البراجراف الي بعده علي طول*/
+    margin: -30px 0 0;
+    text-align: center;
+    font-size: 20px;
+}
+@media (max-width: 767px){
+    .special-heding{
+        font-size: 60px;
+    }
+    .special-heding + p{
+        margin-top: -22px;
+    }
+
+}
+/* --------------------------------------- */
+.services .continer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(300px , 1fr));
+    gap: 30px;
+    margin-top: 70px;
+}
+.services .services-contant .srv{
+    display: flex;
+    margin-bottom: 20px;
+}
+@media (max-width:767px){
+    .services .services-contant .srv{
+        flex-direction: column;
+        text-align: center;
+        
+    }
+    .services .col img{
+        width: 300px;
+    }
+}
+.services .services-contant .srv i{
+    color: var(--main-color);
+    flex-basis: 60px;
+    font-size: 50px;
+}
+.services .services-contant .srv{
+    flex: 1;
+}
+.services .services-contant .srv h2{
+    margin: 0 0 20px;
+    padding-left: 20px;
+    
+}
+.services .services-contant .srv p{
+    color: #777;
+    font-weight: 300;
+}
+
+.services .services-contant img{
+    width: 300px;
+}
+@media (max-width: 1100px){
+    .services .services-contant img{
+        display: none;/*يعني امسحها*/
+    }
+}
+/* start portfolio */
+.protfolio{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f6f6f6;
+}
+.protfolio .protfolio-contant{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 30px;
+    margin: 80px;
+}
+.protfolio .protfolio-contant .card{
+    background-color: white;
+}
+
+.protfolio .protfolio-contant .card img{
+    max-width: 100%;
+    height: 314px;
+}
+.protfolio .protfolio-contant .card .info{
+    padding: 20px;
+   
+}
+.protfolio .protfolio-contant .card .info h2{
+    margin: 0;
+}
+.protfolio .protfolio-contant .card .info p{
+    color:  #777;
+    margin-bottom: 0;
+}
+/* End portfolio */
+/* start about */
+.about{
+    background-color: white;
+    padding-left: 40px;
+    padding-top: 20px;
+}
+.about .about-contant{
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width: 991px){
+    .about .about-contant {
+        flex-direction: column;/*عشان الكلام بدل مهو جمب بعض يبقا تحت بعض */
+        text-align: center;
+
+    }
+}
+.about .about-contant .imge{
+    position: relative;
+    width: 275px;
+    height: 186px;
+}
+@media (max-width: 991px){
+    .about .about-contant .imge{
+        margin: 0 auto 0; /*دي عشان توسط الصوره في منتصف الصفحه*/
+    }
+}
+.about .about-contant .imge img{
+    max-width: 100%;
+}
+.about .about-contant .imge::before{
+    content: "";
+    position: absolute;
+    height: calc(100% + 80px);
+    width: 100px;
+    background-color: var(--main-color);
+    top: -40px;
+    left: -20px;
+    /* z-index: -1;  المفروض دي تخلي befor تختفي تحت الصوره*/
+}
+.about .about-contant .imge::after{
+    content: "";
+    position: absolute;
+    height: 99px;
+    width: 58px;
+    top: -32px;
+    border-left: 54px solid #10cab7;
+    border-bottom: 40px solid #10cab7;
+}
+@media (max-width: 991px){
+    .about .about-contant .imge::before,
+    .about .about-contant .imge::after{
+        display: none;/*عشان في عرض الشاشات دي يختفو*/
+    }
+}
+.about .about-contant .text{
+    /* flex-basis: calc(100% -500px); دي عشان نجيب الكلام جمب الصوره */
+    flex: 1;/*دي بتعمل نفس كلام الي فوقها*/
+    padding: 100px;
+}
+.about .about-contant .text p:first-of-type{
+    font-weight: bold;
+    margin-bottom: 40px;
+    line-height: 2;
+
+}
+.about .about-contant .text hr{
+    width: 50%;
+    display: inline-block;/*عشان لما يصغر يجي من اول السطر ناحيه الشمال*/
+    border-color: var(--main-color);
+
+}
+.about .about-contant .text p:last-child{
+    line-height: 2;
+    color: #777;
+
+}
+/* end about */
+/* start contact */
+.contact{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f6f6f6;
+}
+.contact .info{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.contact .info .label{
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--secondrey-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact .info .link{
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 40px;
+    text-decoration: none;
+    display: block;
+}
+.contact .info .social{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.contact .info .social i{
+    margin-left: 10px;
+    color: var(--secondrey-color);
+}
+@media (max-width: 767px){ /*دي عشان نقلل حجم الخط علي الموبيل*/
+    .contact .info .label,
+    .contact .info .link{
+        font-size: 30px;
+    }
+}
+/* end contact */
+/* start footer */
+.footer{
+    text-align: center;
+    background-color:var(--secondrey-color);
+    font-size: 20px;
+    color: white;
+    padding: 30px 10px;
+}
+.footer span{
+    color: var(--main-color);
+    font-weight: bold;
+}
+/* end footer */
+
